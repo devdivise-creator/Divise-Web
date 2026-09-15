@@ -67,7 +67,7 @@ const Contact: React.FC<ContactProps> = ({ theme = 'dark' }) => {
     return Object.keys(newErrors).length === 0;
   };
 
-  const handleSubmit = (e: React.FormEvent) => {
+  const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
     if (formData._botcheck) {
       setStatus('success');
@@ -77,12 +77,31 @@ const Contact: React.FC<ContactProps> = ({ theme = 'dark' }) => {
       setStatus('error');
       return;
     }
+    
     setStatus('submitting');
-    setTimeout(() => {
+    
+    try {
+      const response = await fetch('/api/contact', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+        },
+        body: JSON.stringify(formData),
+      });
+
+      if (!response.ok) {
+        throw new Error('Failed to send message');
+      }
+
       setStatus('success');
       setFormData({ name: '', email: '', phone: '', org: '', message: '', _botcheck: '' });
       setTimeout(() => setStatus('idle'), 5000);
-    }, 1500);
+    } catch (error) {
+      console.error('Error submitting form:', error);
+      setStatus('error');
+      // Revert back to idle after a few seconds so they can try again
+      setTimeout(() => setStatus('idle'), 5000);
+    }
   };
 
   return (
