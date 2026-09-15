@@ -96,6 +96,7 @@
     padding: 40px 5vw;
   }
   .footer-links-container {
+    flex-direction: column;
     gap: 32px;
   }
 }

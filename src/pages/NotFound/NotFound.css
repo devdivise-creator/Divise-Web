@@ -11,7 +11,7 @@
 }
 
 .not-found-container h1 {
-  font-size: 8rem;
+  font-size: clamp(4rem, 15vw, 8rem);
   margin: 0;
   color: var(--navy-deep);
   font-family: var(--font-heading);
