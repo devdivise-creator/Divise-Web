@@ -166,7 +166,7 @@ const Services: React.FC = () => {
                 <h4 className="service-card-title">{s.title}</h4>
               </div>
               <div className="service-card-icon">
-                <img src={s.icon} alt="" />
+                <img src={s.icon} alt={`${s.title} icon`} />
               </div>
             </div>
           ))}

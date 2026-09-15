@@ -20,7 +20,7 @@ const Loader: React.FC = () => {
   return (
     <div className={`loader-overlay ${!loading ? 'fade-out' : ''}`} aria-hidden="true">
       <div className="loader-logo-wrapper">
-        <img src="/logo.png" alt="" className="loader-logo" />
+        <img src="/logo.png" alt="DiViSe Logo" className="loader-logo" />
         <div className="loader-progress"></div>
       </div>
     </div>

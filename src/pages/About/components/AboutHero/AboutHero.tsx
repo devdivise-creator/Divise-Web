@@ -5,7 +5,7 @@ const AboutHero: React.FC = () => {
   return (
     <>
       <section className="about-hero">
-        <img src="/about-hero-bg.png" alt="" className="about-hero-bg" />
+        <img src="/about-hero-bg.png" alt="Commander Dilip Jain overseeing naval operations" className="about-hero-bg" />
         <div className="about-hero-overlay" />
         <div className="about-hero-content">
           <div className="about-hero-profile">
@@ -26,7 +26,7 @@ const AboutHero: React.FC = () => {
       <section className="about-expertise">
         <div className="about-expertise-inner">
           <div className="about-expertise-card">
-            <img src="/about-icon-1.png" alt="" className="about-exp-icon" />
+            <img src="/about-icon-1.png" alt="Submarine Icon" className="about-exp-icon" />
             <h3 className="about-exp-title">Submarine &amp; Warship<br />Programmes</h3>
             <p className="about-exp-body">
               Construction, Production, Outfitting, and Inspections, Testing &amp; Acceptance Trials
@@ -34,7 +34,7 @@ const AboutHero: React.FC = () => {
             </p>
           </div>
           <div className="about-expertise-card">
-            <img src="/about-icon-2.png" alt="" className="about-exp-icon" />
+            <img src="/about-icon-2.png" alt="Strategic Planning Icon" className="about-exp-icon" />
             <h3 className="about-exp-title">Strategic &amp; Technical<br />Leadership</h3>
             <p className="about-exp-body">
               Strategic Planning, Project Management, Operations, and Indigenisation across
@@ -42,7 +42,7 @@ const AboutHero: React.FC = () => {
             </p>
           </div>
           <div className="about-expertise-card">
-            <img src="/about-icon-3.png" alt="" className="about-exp-icon" />
+            <img src="/about-icon-3.png" alt="Global Handshake Icon" className="about-exp-icon" />
             <h3 className="about-exp-title">Negotiations and<br />International Technology</h3>
             <p className="about-exp-body">
               Commercial and Technical Negotiations, and Management of International Defence
