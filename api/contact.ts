@@ -33,9 +33,13 @@ export default async function handler(req: Request) {
       });
     }
 
+    const host = req.headers.get('host') || '';
+    const isLocalhost = host.includes('localhost');
+    const targetEmail = isLocalhost ? 'devdivise@gmail.com' : 'dilipjain@gmail.com';
+
     const { error } = await resend.emails.send({
       from: 'onboarding@resend.dev',
-      to: 'dilipjain@gmail.com',
+      to: targetEmail,
       replyTo: email,
       subject: `New Contact Form Submission from ${name}`,
       html: `
@@ -46,6 +50,8 @@ export default async function handler(req: Request) {
         <p><strong>Organization:</strong> ${org || 'N/A'}</p>
         <h3>Message:</h3>
         <p>${message.replace(/\n/g, '<br>')}</p>
+        <hr/>
+        <p><em>Sent via ${isLocalhost ? 'Localhost Testing' : 'Production'}</em></p>
       `,
     });
 
